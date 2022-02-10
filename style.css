@@ -107,6 +107,4 @@
 
 .today {
     background-color: var(--dark-green);
-    border: 1px solid var(--light-green);
-    font-weight: 600;
 }
