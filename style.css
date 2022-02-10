@@ -1,8 +1,12 @@
 :root {
+    --mintcream: mintcream;
+    --light-green: #1d9b6bd0;
     --green: #167e56;
-    --dark-green: #197552;
+    --dark-green: #186447;
     --dark-blue: #12121f;
+    --grey: #222227bb;
     --dark-grey: #222227;
+    --smooth-grey: #5c5c5c;
 }
 
 * {
@@ -24,8 +28,8 @@
 .calendar {
     width: 300px;
     height: 400px;
-    background-color: var(--dark-grey);
-    color: mintcream;
+    background-color: var(--grey);
+    color: var(--mintcream);
 }
 
 .header {
@@ -38,8 +42,8 @@
     background-color: var(--green);
 }
 
-.previous-mouth,
-.next-mouth {
+.previous-month,
+.next-month {
     padding: 0 10px;
     height: 100%;
     display: flex;
@@ -53,8 +57,8 @@
     width: 100%;
 }
 
-.previous-mouth:hover,
-.next-mouth:hover {
+.previous-month:hover,
+.next-month:hover {
     cursor: pointer;
     background-color: var(--dark-green);
 }
@@ -64,7 +68,7 @@
     flex-direction: column;
 }
 
-.mouth {
+.month-year {
     font-size: 22px;
     text-align: center;
 }
@@ -77,9 +81,10 @@
 
 .week-days {
     display: flex;
-    padding: 10px;
+    padding: 15px 10px;
     justify-content: space-between;
     min-width: 40px;
+    background-color: var(--dark-grey);
 }
 
 .days {
@@ -87,10 +92,21 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
+    color: var(--smooth-grey);
 }
 
 .days div {
     padding: 10px;
     min-width: 40px;
     text-align: center;
+}
+
+.days div.active {
+    color: var(--mintcream);
+}
+
+.today {
+    background-color: var(--dark-green);
+    border: 1px solid var(--light-green);
+    font-weight: 600;
 }
