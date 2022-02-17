@@ -134,7 +134,9 @@ const setDateOnCalendar = () => {
 }
 
 const setToday = () => {
-    document.querySelector(`[data-day="${today}"]`).classList.add('today');
+    if ((month + 1) === currentMonth && year === currentYear) {
+        document.querySelector(`[data-day="${today}"]`).classList.add('today');
+    }
 }
 
 setWeekDays();
@@ -150,6 +152,7 @@ previousMonthButton.addEventListener('click', () => {
     }
     
     setDateOnCalendar();
+    setToday();
 });
 nextMonthButton.addEventListener('click', () => {
     const monthNumber = currentMonth === 12 ? 1 : currentMonth + 1;
@@ -160,6 +163,7 @@ nextMonthButton.addEventListener('click', () => {
     }
 
     setDateOnCalendar();
+    setToday();
 });
 
 switchLanguage.addEventListener('click', e => {
